@@ -1,0 +1,67 @@
+.menu {
+  @apply relative inline-block text-left;
+
+  & .button {
+    @apply inline-flex justify-center items-center w-full py-2 rounded-lg font-semibold;
+    @apply transition-all duration-200 ease-in-out;
+    @apply bg-[rgba(0,0,0,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] text-gray-200 shadow-md;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      @apply text-cyan-300 border-cyan-400;
+    }
+
+    &:focus,
+    &:focus-within,
+    &:active {
+      @apply ring-2 ring-cyan-400/50 text-white;
+    }
+
+    & svg {
+      @apply w-5 h-5 transition-transform duration-150 text-gray-400 group-hover:text-cyan-300;
+    }
+
+    &[aria-expanded="true"] svg[data-animated="true"] {
+      @apply rotate-180;
+    }
+  }
+
+  & .items_container {
+    @apply absolute right-0 mt-2 origin-top-right rounded-xl z-10 shadow-xl;
+    @apply bg-[rgba(0,0,0,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] text-gray-200;
+  }
+}
+
+.menu_item {
+  @apply flex items-center rounded-md w-full px-3 py-2 transition-all duration-200 ease-in-out;
+  @apply bg-[rgba(0,0,0,0.4)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] text-gray-200;
+
+  & svg {
+    @apply w-4 h-4 mr-3 text-gray-400;
+  }
+
+  &:hover,
+  &:focus {
+    @apply bg-cyan-600/30 text-cyan-300;
+
+    & svg {
+      @apply text-cyan-300;
+    }
+  }
+
+  &.danger {
+    &:hover,
+    &:focus {
+      @apply bg-red-600/30 text-red-300;
+
+      & svg {
+        @apply text-red-300;
+      }
+    }
+  }
+
+  &.disabled {
+    @apply cursor-not-allowed opacity-50;
+    @apply hover:bg-transparent focus:bg-transparent;
+  }
+}

@@ -1,0 +1,77 @@
+.button {
+    @apply px-4 py-2 inline-flex items-center justify-center;
+    @apply rounded-lg text-base font-semibold transition-all duration-200 ease-in-out;
+    @apply focus:ring-[3px] focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-opacity-50;
+    @apply bg-[rgba(0,0,0,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] text-gray-200 shadow-md;
+
+    /* Sizing Controls */
+    &.small {
+        @apply px-3 py-1 h-8 font-normal text-sm focus:ring-2;
+    }
+
+    &.large {
+        @apply px-6 py-3 text-lg;
+    }
+
+    &.secondary {
+        @apply text-cyan-300 bg-[rgba(0,0,0,0.4)] border border-[rgba(255,255,255,0.08)];
+
+        &:disabled {
+            @apply bg-transparent text-gray-500 cursor-not-allowed;
+        }
+    }
+
+    &:disabled {
+        @apply cursor-not-allowed opacity-50;
+    }
+
+    &.square {
+        @apply p-0 w-12 h-12;
+
+        &.small {
+            @apply w-8 h-8;
+        }
+    }
+}
+
+.primary {
+    @apply bg-cyan-600/30 text-cyan-300 border border-cyan-400/40;
+    @apply hover:bg-cyan-600/50 hover:text-white active:scale-[0.97];
+    @apply focus:ring-cyan-400 focus:ring-opacity-75;
+
+    &.secondary {
+        @apply hover:bg-cyan-600/40 active:bg-cyan-600/50;
+    }
+
+    &:disabled {
+        @apply bg-cyan-600/20 text-cyan-200/50;
+    }
+}
+
+.text {
+    @apply bg-transparent text-cyan-300 shadow-none;
+    @apply hover:text-white hover:underline active:text-cyan-400;
+    @apply focus:ring-cyan-400 focus:ring-opacity-50;
+
+    &.secondary {
+        @apply hover:text-cyan-200 active:text-cyan-300;
+    }
+
+    &:disabled {
+        @apply text-gray-500 cursor-not-allowed;
+    }
+}
+
+.danger {
+    @apply bg-red-600/30 text-red-300 border border-red-500/40;
+    @apply hover:bg-red-600/50 hover:text-red-200 active:scale-[0.97];
+    @apply focus:ring-red-400 focus:ring-opacity-75;
+
+    &.secondary {
+        @apply hover:bg-red-600/40 active:bg-red-600/50;
+    }
+
+    &:disabled {
+        @apply bg-red-600/20 text-red-200/50 cursor-not-allowed;
+    }
+}

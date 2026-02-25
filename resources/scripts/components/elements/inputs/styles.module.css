@@ -1,0 +1,41 @@
+.checkbox_input {
+    @apply w-4 h-4 rounded-md cursor-pointer transition-all duration-200 ease-in-out;
+    @apply border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.6)] backdrop-blur-md text-cyan-400 shadow-sm;
+
+    &:focus,
+    &:active {
+        @apply ring-2 ring-cyan-400/50 ring-offset-2 ring-offset-[rgba(0,0,0,0.8)];
+    }
+
+    &.indeterminate:checked {
+        @apply text-cyan-400/70 border border-cyan-400;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    }
+
+    &:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+}
+
+.text_input {
+    @apply w-full rounded-lg px-4 py-2 outline-none border border-[rgba(255,255,255,0.08)];
+    @apply bg-[rgba(0,0,0,0.6)] backdrop-blur-md text-gray-200 shadow-sm transition-all duration-200 ease-in-out;
+    @apply placeholder-gray-400;
+
+    &:focus,
+    &:active {
+        @apply ring-2 ring-cyan-400/50 ring-opacity-75;
+    }
+
+    &:hover {
+        @apply border-cyan-400 text-gray-100;
+    }
+
+    &:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+    &.loose {
+        @apply px-6 py-3 text-lg;
+    }
+}
